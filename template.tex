@@ -1,0 +1,55 @@
+\documentclass{asscc2026}
+
+\usepackage{amsmath}
+
+\title{Title of the Paper}
+\author{Author One, Author Two, and Author Three}
+\affiliation{Affiliation}
+
+\begin{document}
+
+\maketitle
+
+Write the manuscript text here. The A-SSCC 2026 format uses US Letter paper, two columns, 9 point body text, and the fixed margins encoded in the class file. Refer to figures as Fig. 1 in the middle of a sentence and as Figure 1 at the beginning of a sentence.
+
+\begin{equation}
+  y = ax + b .
+\end{equation}
+
+Refer to equations as (1), and cite references in square brackets [1].
+
+\begin{thebibliography}{9}
+\bibitem{ref1}
+Author et al., ``Paper title,'' Conference or Journal, pp. 1--4, 2026.
+\end{thebibliography}
+
+\clearpage
+\onecolumn
+
+% To insert an image in a slot, use:
+% \ASSCCFigurePlaceholder[
+%   \includegraphics[width=0.95\linewidth,height=2.7in,keepaspectratio]{your-figure-file}
+% ]{Fig. 1. Caption text.}
+\ASSCCFigurePage
+  {\ASSCCFigurePlaceholder{Fig. 1.}}
+  {\ASSCCFigurePlaceholder{Fig. 2.}}
+  {\ASSCCFigurePlaceholder{Fig. 3.}}
+  {\ASSCCFigurePlaceholder{Fig. 4.}}
+  {\ASSCCFigurePlaceholder{Fig. 5.}}
+  {\ASSCCFigurePlaceholder{Fig. 6.}}
+
+\ASSCCFigurePage
+  {\ASSCCFigurePlaceholder{Fig. 7.}}
+  {\ASSCCFigureSlot{}{%
+    \section*{Additional References:}
+    [7]\par
+    [8]\par
+    [9]\par
+    [10]\par
+  }}
+  {\ASSCCFigurePlaceholder{Fig. S1 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S2 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S3 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S4 (to be removed for final submission)}}
+
+\end{document}

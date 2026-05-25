@@ -1,0 +1,115 @@
+\documentclass{asscc2026}
+
+\usepackage{amsmath}
+
+\title{Title of the Paper}
+\author{Authors}
+\affiliation{Affiliation}
+
+\newcommand{\samplefigure}{%
+  \begingroup
+  \setlength{\unitlength}{1pt}%
+  \fbox{%
+    \begin{minipage}[c][2.35in][c]{0.88\linewidth}
+      \centering
+      \begin{picture}(210,115)
+        \linethickness{0.5pt}
+        \put(18,18){\vector(1,0){170}}
+        \put(18,18){\vector(0,1){82}}
+        \put(17,7){\makebox(0,0)[t]{0}}
+        \put(185,7){\makebox(0,0)[t]{Time}}
+        \put(8,96){\makebox(0,0)[r]{Output}}
+        \linethickness{1.1pt}
+        \qbezier(18,24)(55,86)(94,65)
+        \qbezier(94,65)(132,43)(178,89)
+        \linethickness{0.4pt}
+        \multiput(18,38)(0,20){3}{\line(1,0){165}}
+        \multiput(58,18)(40,0){4}{\line(0,1){78}}
+      \end{picture}
+    \end{minipage}%
+  }%
+  \endgroup
+}
+
+\begin{document}
+
+\maketitle
+
+This template is modified from the IEEE A-SSCC 2026 Word template and is intended to reproduce its paper format in LaTeX.
+
+First, this template has been designed for paper 8 1/2 in x 11 in or US-letter paper size (215.9 mm x 279.4 mm). The format is as follows: top margin is 12.7 mm, bottom margin is 7.6 mm, left margin is 10.2 mm, and right margin is 10.2 mm. All text must be in a two-column format. Text must be fully justified.
+
+To achieve consistent rendering in printed and electronic proceedings, use Arial font. Use a font no smaller than 9 point throughout the paper, including figure captions. The paper title is 10 point bold; authors' names, affiliations, main text, equations, figure captions, and references are 9 point.
+
+The paper title on the first page should begin from the top grid on the left and in boldface type. Capitalize only the first word in the paper title, except for proper nouns and element symbols. The authors' names and affiliations appear below the title in capital and lower case letters.
+
+The template is designed for seven figures placed in the figure table on the second and third pages. Fig. 7 is the last figure of the main manuscript. Figs. 1--6 will be printed in the digest. Fig. 7 will be included only in the electronic version of your paper. A comparison table is strongly encouraged as one of the figures. You may include supplementary figures as shown. Refer to the first seven figures in the manuscript text, but do not refer to the supplementary figures.
+
+In the text, use the abbreviation ``Fig. 1'' for immediate identification if it does not appear at the beginning of a sentence, where it should appear as ``Figure 1''. All illustrations should be clear prints. Do not use low-resolution cut-and-paste images or photocopies. Figure captions, legends, tick labels, and axis labels must be legible.
+
+When you first use abbreviations and acronyms, define them first. There is no need to define common acronyms, such as MOSFET, AC, and DC. Unless unavoidable, do not use abbreviations in titles or headings.
+
+Number equations consecutively with equation numbers in parentheses flush with the right margin, as in (1). Use the exp function, the solidus (/), or appropriate exponents to make equations compact. Italicize Roman symbols for quantities and variables, but not Greek symbols. Punctuate equations when they are part of a sentence, like this,
+\begin{equation}
+  F = k q_1 q_2 / r^2 .
+\end{equation}
+The font size of symbols in each equation should also be 9 point. In the text, refer to equations as (1). Do not use ``Eq. (1)'' or ``Equation (1)'' except at the beginning of a sentence.
+
+When a particular reference is cited in the text, assign it a number and place it in the list of references at the end of this article. Use the same number each time this reference is cited. Type reference numbers in square brackets, as shown at the end of this sentence [1]. Number citations consecutively. The sentence punctuation follows the brackets. Do not use ``Ref. [3]'' or ``reference [3]'' except at the beginning of a sentence.
+
+Although we have tried to illustrate the main rules above, it is strongly recommended that you write your paper directly using this template. If you set up the paper by yourself according to these rules, you can avoid unexpected formatting trouble.
+
+It is emphasized that, if your paper does not follow the rules here, it may be rejected without further review for suitability of publication in the Proceedings.
+
+Finally, any research paper presented at the conference should contain new results. Simple duplication of any published paper, in whole or in part, conflicts with academic ethics and IEEE publication policy.
+
+Although we have tried to illustrate the main rules above, it is strongly recommended that you write your paper directly using this template. If you set up the paper by yourself according to these rules, you can avoid unexpected formatting trouble.
+
+It is emphasized that, if your paper does not follow the rules here, it may be rejected without further review for suitability of publication in the Proceedings.
+
+Finally, any research paper presented at the conference should contain new results. Simple duplication of any published paper, in whole or in part, conflicts with academic ethics and IEEE publication policy.
+
+\begin{thebibliography}{9}
+\bibitem{peng2018}
+G. Peng et al., ``A 2.69 Mbps/mW 1.09 Mbps/kGE Conjugate Gradient-based MMSE Detector for 64-QAM 128x8 Massive MIMO Systems,'' A-SSCC 2018:191-194.
+
+\bibitem{yang2020}
+J. Yang et al., ``A Time-Domain Computing-in-Memory based Processor using Predictable Decomposed Convolution for Arbitrary Quantized DNNs,'' A-SSCC 2020:1-4.
+
+\bibitem{ref3}
+
+\bibitem{ref4}
+
+\bibitem{ref5}
+
+\bibitem{ref6}
+\end{thebibliography}
+
+\clearpage
+\onecolumn
+
+\ASSCCFigurePage
+  % Replace \samplefigure with:
+  % \includegraphics[width=0.95\linewidth,height=2.7in,keepaspectratio]{your-figure-file}
+  {\ASSCCFigurePlaceholder[\vfill \samplefigure \vfill]{Fig. 1. Example figure inserted in a figure slot.}}
+  {\ASSCCFigurePlaceholder{Fig. 2.}}
+  {\ASSCCFigurePlaceholder{Fig. 3.}}
+  {\ASSCCFigurePlaceholder{Fig. 4.}}
+  {\ASSCCFigurePlaceholder{Fig. 5.}}
+  {\ASSCCFigurePlaceholder{Fig. 6.}}
+
+\ASSCCFigurePage
+  {\ASSCCFigurePlaceholder{Fig. 7.}}
+  {\ASSCCFigureSlot{}{%
+    \section*{Additional References:}
+    [7]\par
+    [8]\par
+    [9]\par
+    [10]\par
+  }}
+  {\ASSCCFigurePlaceholder{Fig. S1 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S2 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S3 (to be removed for final submission)}}
+  {\ASSCCFigurePlaceholder{Fig. S4 (to be removed for final submission)}}
+
+\end{document}
