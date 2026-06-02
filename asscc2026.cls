@@ -1,7 +1,18 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{asscc2026}[IEEE A-SSCC 2026 paper template]
+%%
+%% asscc2026.cls - IEEE A-SSCC 2026 paper template (unofficial)
+%%
+%% This is the IEEE Asian Solid-State Circuits Conference (A-SSCC) 2026 paper
+%% template class file. It is based on the IEEEtran class and customized for 
+%% A-SSCC 2026 formatting requirements. Even though this template is designed
+%% to closely follow the official A-SSCC 2026 formatting guidelines, it is not
+%% an official template provided by the conference organizers. 
+%% Authors should always refer to the official A-SSCC 2026 website
+%% for the most up-to-date formatting instructions and templates.
 
-\LoadClass[twocolumn]{article}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{asscc2026}[2026/06/02 IEEE A-SSCC 2026 paper template]
+
+\LoadClass{IEEEtran}
 
 \RequirePackage[
   letterpaper,
@@ -86,12 +97,34 @@
 }
 \pagestyle{asscc}
 
+\newcounter{addrCtr}
 \renewcommand{\title}[1]{\gdef\@title{#1}}
 \renewcommand{\author}[1]{\gdef\@author{#1}}
-\newcommand{\affiliation}[1]{\gdef\@affiliation{#1}}
+\newcommand{\authorrefmark}[1]{\textsuperscript{#1}}
+\newcommand{\address}{\@ifnextchar[{\ASSCC@address}{\ASSCC@address[\unskip]}}
+\def\ASSCC@address[#1]#2{%
+  \stepcounter{addrCtr}%
+  \expandafter\gdef\csname ASSCC@addrInd\theaddrCtr\endcsname{#1}%
+  \expandafter\gdef\csname ASSCC@addr\theaddrCtr\endcsname{#2}%
+}
+\newcommand{\affiliation}[1]{\address{#1}}
 \title{}
 \author{}
-\affiliation{}
+
+\newcommand{\ASSCC@printaddresses}{%
+  \ifnum\value{addrCtr}>0
+    \@tempcnta=0
+    \loop\ifnum\@tempcnta<\value{addrCtr}%
+      \advance\@tempcnta by 1
+      \par
+      \begingroup
+        \ASSCCTitleFont\normalfont\normalsize
+        \textsuperscript{\expandafter\csname ASSCC@addrInd\the\@tempcnta\endcsname}%
+        \expandafter\csname ASSCC@addr\the\@tempcnta\endcsname
+      \endgroup
+    \repeat
+  \fi
+}
 
 \renewcommand{\maketitle}{%
   \begingroup
@@ -99,7 +132,8 @@
     \vspace{3pt}
     \ASSCCTitleFont\normalfont\normalsize\@author\par
     \vspace{2pt}
-    \ASSCCTitleFont\normalfont\normalsize\@affiliation\par
+    \ASSCC@printaddresses
+    \par
     \vspace{5pt}
   \endgroup
 }

@@ -5,6 +5,7 @@ This repository contains a LaTeX class and sample document based on the provided
 ## Files
 
 - `asscc2026.cls`: conference layout class
+- `IEEEtran.cls`, `IEEEtran.bst`: IEEE base class and bibliography style
 - `template.tex`: blank starting point
 - `sample.tex`: sample manuscript matching the provided template structure
 - `Makefile`: build helper
@@ -28,6 +29,34 @@ make SRC=texfile_name pdf
 ```
 
 The class uses XeLaTeX by default so that the system Arial font can be used when available. With pdfLaTeX, it falls back to the available sans-serif font setup.
+
+## Authors And Affiliations
+
+Use `\authorrefmark` in the author list and one or more `\address` commands for affiliations:
+
+```tex
+\author{Author One\authorrefmark{1}, Author Two\authorrefmark{2}}
+\address[1]{Department, University, City, Country}
+\address[2]{Company or Institute, City, Country}
+```
+
+## References
+
+Manual references work with the standard LaTeX `thebibliography` environment:
+
+```tex
+\begin{thebibliography}{9}
+\bibitem{ref1}
+Author et al., ``Paper title,'' Conference or Journal, pp. 1--4, 2026.
+\end{thebibliography}
+```
+
+For BibTeX, use the included IEEE style:
+
+```tex
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+```
 
 ## Figure Pages
 

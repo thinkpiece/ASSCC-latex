@@ -1,5 +1,6 @@
 ENGINE ?= xelatex
-SRC ?= sample
+MAIN ?= sample
+SRC ?= $(MAIN)
 
 .PHONY: pdf clean
 
