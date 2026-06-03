@@ -116,7 +116,7 @@
     \@tempcnta=0
     \loop\ifnum\@tempcnta<\value{addrCtr}%
       \advance\@tempcnta by 1
-      \par
+      \ifnum\@tempcnta>1 ; \fi
       \begingroup
         \ASSCCTitleFont\normalfont\normalsize
         \textsuperscript{\expandafter\csname ASSCC@addrInd\the\@tempcnta\endcsname}%
